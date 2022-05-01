@@ -1,0 +1,41 @@
+
+.img{
+   width: 150px;
+  
+}
+.home{
+    height: 100vh;
+    background-image: url(/Assets/Imagens/teste2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+    
+    
+   
+}
+.titulo{
+    color: white !important;
+    font-weight: bold !important;
+    text-shadow: 4px 2px 1px rgb(236, 19, 19);
+    padding-top: 80px;
+    padding-left: 150px;
+   
+    
+ 
+    
+}
+.botao{
+    border-color: black !important;
+    background-color: aqua !important;
+    color: black !important;
+    font-weight: bold !important;
+
+}
+.postagem{
+    background-color: white;
+}
+
+.centralizar{
+    justify-content: center;
+    display: flex;
+}

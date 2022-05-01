@@ -1,0 +1,37 @@
+
+.text-decorator-none{
+    text-decoration: none;
+}
+.tit{
+    font-weight: bold;
+    color:rgb(5, 245, 165);
+    
+}
+
+.but{
+    background-color: aquamarine;
+}
+
+.background{
+    background-image: url('/Assets/Imagens/Picture2\(1\).jpg');
+    background-repeat: no-repeat; 
+    width: 100vh;
+    min-height: 100vh; 
+    background-size: cover;
+    background-position: left;
+}
+.cadastro{
+    cursor:pointer;
+    font-weight: bold;
+    color:greenyellow;
+    font-style: oblique;
+    
+}
+
+.cadastro:hover{
+    color: aquamarine;
+}
+
+.usua{
+    color: blue;
+}

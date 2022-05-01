@@ -1,0 +1,53 @@
+
+.cadastrar{
+    color: black;
+}
+
+#log{
+    color: black;
+   
+}
+.cadastrar:hover{
+    color: rgb(176, 228, 176);
+}
+#log:hover{
+    color: #1c0cf1;
+}
+
+.cadastrar{
+    color: black;
+}
+.cadastrar:hover{
+    color: rgb(176, 228, 176);
+}
+.log:hover{
+    color: #1c0cf1;
+}
+
+.back{
+    background: linear-gradient(36deg, #c4ebf1 8%, #25b9eb 60%);
+}
+
+
+.cursor{
+    cursor:pointer;
+    color: white;
+}
+
+.text-decorator-none{
+    text-decoration: none;
+}
+
+.titut{
+    color: black;
+}
+
+.titut:hover{
+    color: rgb(176, 228, 176)
+}
+
+.bar{
+    display: flex;
+    justify-content: center;
+}
+
