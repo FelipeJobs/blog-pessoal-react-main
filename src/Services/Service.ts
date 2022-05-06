@@ -12,6 +12,29 @@ export const login = async (url: any, dados: any, setDados: any) => {
     const resposta = await api.post(url, dados)
     setDados(resposta.data.token)
 }
+export const busca =async (url:any, setDados:any,header:any) => {
+    const resposta = await api.get(url,header)
+    /* será dentro do header que vamos receber o token para permitir que o usuário consiga listar as postagem ou temas. */
+    setDados(resposta.data)
+}
+export const buscaId = async(url: any, setDados: any, header: any) => {
+    const resposta = await api.get(url, header)
+    setDados(resposta.data)
+}
+
+export const post = async(url: any, dados: any, setDados: any, header: any) => {
+    const resposta = await api.post(url, dados, header)
+    setDados(resposta.data)
+}
+
+export const put = async(url: any, dados: any, setDados: any, header: any) => {
+    const resposta = await api.put(url, dados, header)
+    setDados(resposta.data)
+}
+
+export const deleteId = async(url: any, header: any) => {
+    await api.delete(url, header)
+}
 
 
 
@@ -21,3 +44,5 @@ export const login = async (url: any, dados: any, setDados: any) => {
  */
 
 /* A palavra-chave await recebe uma Promise e a transforma em um valor de retorno (ou lança uma exceção em caso de erro). Quando utilizamos await, o JavaScript vai aguardar até que a Promise finalize. Se for finalizada com sucesso (o termo utilizado é fulfilled), o valor obtido é retornado. Se a Promise for rejeitada (o termo utilizado é rejected), é retornado o erro lançado pela exceção.*/
+
+

@@ -2,8 +2,11 @@ import React from "react";
 import { Typography, Box, Grid, Button } from "@material-ui/core";
 import "./Home.css";
 import TabPostagem from "../../components/Postagem/TabPostagem/TabPostagem";
+import ModalPostagem from "../../components/Postagem/ModalPostagem/ModalPostagem";
+import { Link } from "react-router-dom";
 
 function Home() {
+  
   return (
     <>
       <Grid  className="home"
@@ -15,7 +18,7 @@ function Home() {
       >
         <Grid alignItems="center" justifyContent="center" xs={12} sm={6}>
           <Grid alignItems="center">
-          <Box paddingX={10}>
+          <Box paddingY={3} marginLeft={15}>
             <div className="centralizar">
             <Typography
               variant="h3"
@@ -31,9 +34,12 @@ function Home() {
             </div>
             
           </Box>
-          </Grid>
+
           <Box display="flex" justifyContent="center">
-            <Box marginRight={1}></Box>
+            <Box paddingLeft={30}>
+              <ModalPostagem />
+            </Box>
+            <Link to = '/postagens' className="text-decorator-none">
             <Button
               variant="outlined"
               color="secondary"
@@ -41,16 +47,21 @@ function Home() {
             >
               Ver Postagens
             </Button>
-          </Box>
+            </Link>
+            </Box>
+            
+          </Grid>
+        
         </Grid>
         <Grid item xs={3}>
         </Grid>
         <Box>
         <img src= 'cachorro.gif' alt="cão correndo" className="img"/>
         </Box>
+
         <Grid xs={12} className="postagem">
           <TabPostagem/>
-        </Grid>
+        </Grid>*
       </Grid>
     </>
   );

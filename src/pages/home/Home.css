@@ -1,4 +1,6 @@
-
+.text-decorator-none{
+    text-decoration: none;
+}
 .img{
    width: 150px;
   
@@ -31,11 +33,12 @@
     font-weight: bold !important;
 
 }
-.postagem{
+/* .postagem{
     background-color: white;
-}
+} */
 
 .centralizar{
     justify-content: center;
     display: flex;
+    
 }
