@@ -110,13 +110,14 @@ function CadastroTema() {
                     value={tema.descricao}
                     onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                     id="descricao"
-                    label="descricao"
+                    label="Descricao"
                     variant="outlined"
                     name="descricao"
                     margin="normal"
                     fullWidth
+                    style={{backgroundColor: 'lightblue'}}
                 />
-                <Button type="submit" variant="contained" color="primary">
+                <Button style={{backgroundColor: 'aquamarine'}} type="submit" variant="contained" className='ola' >
                     Finalizar
                 </Button>
                 

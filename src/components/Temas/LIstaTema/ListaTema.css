@@ -1,3 +1,18 @@
 .text-decorator-none{
     text-decoration: none;
 }
+
+.fundo{
+    background-color:rgb(98, 174, 250);
+    text-align: center;
+    justify-content: center;
+    color: mediumspringgreen;
+    font-weight: bold;
+    font-size: 20pt;
+    
+}
+
+.tema{
+    color:greenyellow
+    
+}

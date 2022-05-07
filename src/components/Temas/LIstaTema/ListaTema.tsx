@@ -40,8 +40,8 @@ function ListaTema() {
     
       <Box m={2} >
         <Card variant="outlined">
-          <CardContent>
-            <Typography color="textSecondary" gutterBottom>
+          <CardContent className='fundo'>
+            <Typography className='tema' gutterBottom>
               Tema
             </Typography>
 
@@ -51,12 +51,12 @@ function ListaTema() {
 
           </CardContent>
 
-          <CardActions>
+          <CardActions className='fundo'>
             <Box display="flex" justifyContent="center" mb={1.5} >
             {/* com o link atualizar e deletar eu mostro a rota que será atualizada e tb capturo o id para deletar ou atualizar */}
               <Link to={`/formularioTema/${tema.id}`} className="text-decorator-none">
-                <Box mx={1}>
-                  <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                <Box mx={1} className='fundo'>
+                  <Button variant="contained" className="marginLeft" size='small' style={{background: 'aquamarine'}} >
                     atualizar
                   </Button>
                 </Box>
@@ -64,7 +64,7 @@ function ListaTema() {
               
               <Link to={`/deletarTema/${tema.id}`} className="text-decorator-none">
                 <Box mx={1}>
-                  <Button variant="contained" size='small' color="secondary">
+                  <Button variant="contained" size='small' style={{background: 'red'}}>
                     deletar
                   </Button>
                 </Box>

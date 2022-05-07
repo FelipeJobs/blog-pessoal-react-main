@@ -19,18 +19,16 @@
     color: white !important;
     font-weight: bold !important;
     text-shadow: 4px 2px 1px rgb(236, 19, 19);
-    padding-top: 80px;
+    padding-bottom: 25px;
     padding-left: 150px;
    
-    
- 
-    
 }
 .botao{
     border-color: black !important;
     background-color: aqua !important;
     color: black !important;
     font-weight: bold !important;
+
 
 }
 /* .postagem{

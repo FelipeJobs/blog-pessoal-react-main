@@ -18,7 +18,7 @@ function Home() {
       >
         <Grid alignItems="center" justifyContent="center" xs={12} sm={6}>
           <Grid alignItems="center">
-          <Box paddingY={3} marginLeft={15}>
+          <Box paddingY={0}  >
             <div className="centralizar">
             <Typography
               variant="h3"
@@ -59,9 +59,9 @@ function Home() {
         <img src= 'cachorro.gif' alt="cão correndo" className="img"/>
         </Box>
 
-        <Grid xs={12} className="postagem">
+        {/* <Grid xs={12} className="postagem">
           <TabPostagem/>
-        </Grid>*
+        </Grid>* */}
       </Grid>
     </>
   );
