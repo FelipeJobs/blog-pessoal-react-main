@@ -3,10 +3,10 @@ import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import { Button, Box } from "@material-ui/core"
 import CloseIcon from '@material-ui/icons/Close';
 import Modal from '@material-ui/core/Modal';
-
+import './ModalPostagem.css';
 import CadastroPostagem from '../CadastrarPostagem/CadastrarPostagem';
 
-import './ModalPostagem.css';
+
 
 function getModalStyle() {
     const top = 50;

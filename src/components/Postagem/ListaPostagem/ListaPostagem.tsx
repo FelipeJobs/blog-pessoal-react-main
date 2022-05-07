@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Box, Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
+import { Box, Card, CardActions, CardContent, Button, Typography, Grid } from '@material-ui/core';
 import './ListaPostagem.css';
 import Postagem from '../../../Models/Postagem';
 import useLocalStorage from 'react-use-localstorage';
 import { busca } from '../../../Services/Service';
+
 
 function ListaPostagem() {
   let history = useNavigate()
@@ -34,6 +35,7 @@ function ListaPostagem() {
 
   return (
     <>
+    <Grid className='backgroundlistpost'>
       {postagens.map(postagem =>
         <Box m={2} >
           <Card variant="outlined">
@@ -72,6 +74,7 @@ function ListaPostagem() {
             </CardActions>
           </Card>
         </Box>)}
+        </Grid>
     </>)
 }
 

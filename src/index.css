@@ -5,9 +5,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20190221/ourmid/pngtree-blue-background-attendance-wall-business-simple-image_21809.jpg');
+
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
