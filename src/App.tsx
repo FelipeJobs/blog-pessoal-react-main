@@ -14,10 +14,14 @@ import CadastrarPostagem from "./components/Postagem/CadastrarPostagem/Cadastrar
 import CadastroTema from "./components/Temas/CadastrarTema/CadastroTema";
 import DeletarPostagem from "./components/Postagem/DeletarPostagem/DeletarPostagem";
 import DeletarTema from "./components/Temas/DeletarTema/DeletarTema";
+import { Provider } from "react-redux";
+import store from "./store/store";
 
 /*  */
 function App() {
   return (
+    /* graça ao provider todas as rotas podem acessar o store */
+    <Provider store={store}>
     <Router> {/* basicamente ele é usado para informar algo que será renderizado em todas as silas, neste caso seria o navbar e o footer(menus e rodapé) (BrowserRouter)  */}
       <div style={{minHeight: '100vh' }}>
       <Navbar />
@@ -45,6 +49,7 @@ function App() {
       </div>
       <Footer />
     </Router>
+    </Provider>
     /* element eu coloco a função e no path o caminho. */
   );
 }

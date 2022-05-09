@@ -4,16 +4,19 @@ import { Link, useNavigate } from "react-router-dom";
 import './Login.css'
 import { useState,useEffect } from "react";
 import UserLogin from "../../Models/UserLogin";
-import useLocalStorage from 'react-use-localstorage';
+
 import { login } from "../../Services/Service";
+import { useDispatch } from "react-redux";
+import { addToken } from "../../store/tokens/action";
 
 /* Basicamente O use states defini como uma variável será inicializada quando for renderizada(tipo um construtor) */
 
 function Login() {
   // Redireciona o usuário para determinada pagina
   let history = useNavigate()
+  const dispatch = useDispatch();
 
-  const [token, setToken] = useLocalStorage('token')
+  const [token, setToken] = useState('');
   /*Userlocalstory: serve para gravar informações no navegador,  e podemos utilizar essa informação para fazer uma chegagem do comprimento das regras de negócio. Por exemplo ver se a pessoa se autenticou para entrar numa determina rota */
   
   const [userLogin, setUserLogin] = useState<UserLogin>({
@@ -28,6 +31,7 @@ function Login() {
   // userEffect serve para trabalhar efeitos colaterais, isso é, colocamos uma informação para ele analisar dentro do array e caso alguma alteração ocorra nessa informação a function que está dentro do userEffect é ativada.
   useEffect(() => {
     if(token !== ""){
+        dispatch(addToken(token));
         history('/home')
        
     }

@@ -1,11 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Typography, Box, Grid, Button } from "@material-ui/core";
 import "./Home.css";
 import TabPostagem from "../../components/Postagem/TabPostagem/TabPostagem";
 import ModalPostagem from "../../components/Postagem/ModalPostagem/ModalPostagem";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { TokenState } from "../../store/tokens/tokensReducer";
+import { useSelector } from "react-redux";
 
 function Home() {
+  let history = useNavigate();
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+      (state) => state.tokens
+    );
+  
+  useEffect(() => {
+    if (token == "") {
+        alert("Você precisa estar logado")
+        history("/login")
+
+    }
+}, [token])
   
   return (
     <>

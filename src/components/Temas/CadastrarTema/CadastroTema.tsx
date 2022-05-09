@@ -7,6 +7,8 @@ import { buscaId, post, put } from '../../../Services/Service'
 import Tema from '../../../Models/Tema'
 
 import "./CadastroTema.css"
+import { useSelector } from 'react-redux'
+import { TokenState } from '../../../store/tokens/tokensReducer'
 
 function CadastroTema() {
 
@@ -15,7 +17,9 @@ function CadastroTema() {
     const { id } = useParams<{ id: string }>()
     /* o Params ele é usado para capturar os parâmetros que o usuário passa, neste caso o parâmetro é o id */
 
-    const [token, setToken] = useLocalStorage('token')
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+      );
 
     /* que estipulamos como o tema será iniciado é como um construtor. */
     const [tema, setTema] = useState<Tema>({
