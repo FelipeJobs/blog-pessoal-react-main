@@ -16,12 +16,15 @@ import DeletarPostagem from "./components/Postagem/DeletarPostagem/DeletarPostag
 import DeletarTema from "./components/Temas/DeletarTema/DeletarTema";
 import { Provider } from "react-redux";
 import store from "./store/store";
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 /*  */
 function App() {
   return (
     /* graça ao provider todas as rotas podem acessar o store */
     <Provider store={store}>
+    <ToastContainer/>
     <Router> {/* basicamente ele é usado para informar algo que será renderizado em todas as silas, neste caso seria o navbar e o footer(menus e rodapé) (BrowserRouter)  */}
       <div style={{minHeight: '100vh' }}>
       <Navbar />

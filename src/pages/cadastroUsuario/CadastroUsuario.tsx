@@ -1,6 +1,7 @@
 import { Box, Button, Grid, TextField, Typography } from "@material-ui/core";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import User from "../../Models/User";
 import { cadastroUsuario } from "../../Services/Service";
 import './CadastroUsuario.css'
@@ -54,18 +55,47 @@ function CadastroUsuario() {
             
             try {
                 cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-                alert('Usuario cadastrado com sucesso')
+                
+                    toast.success('Usuario cadastrado com sucesso!!!', {
+                    position: "top-right",
+                    autoClose: 1000,
+                    hideProgressBar: true,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    progress: undefined,
+                    theme: 'colored'
+                    });
 
             
             } catch (error) {
                 console.log(`Error: ${error}`)
+                toast.error('Erro ao cadastrar o Usuário', {
+                    position: "top-right",
+                    autoClose: 1000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: 'colored'
+                    });
                 
                 
-                alert("Erro ao cadastrar o Usuário")
+               
             }
 
         } else {
-            alert('Dados inconsistentes. Verifique as informações de cadastro.')
+            toast('Dados inconsistentes. Verifique as informações de cadastro.', {
+                position: "top-right",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'colored'
+                });
 
             setUser({ ...user, senha: "" }) // Reinicia o campo de Senha
             setConfirmarSenha("")           // Reinicia o campo de Confirmar Senha

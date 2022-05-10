@@ -7,6 +7,7 @@ import Postagem from '../../../Models/Postagem';
 import { busca } from '../../../Services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 
 function ListaPostagem() {
@@ -20,7 +21,17 @@ function ListaPostagem() {
 
   useEffect(() => {
     if (token === '') {
-      alert('você precisa se logar primeiro')
+      
+        toast.error('você precisa se logar primeiro!!', {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+        theme: 'dark'
+        });
       history('/login')
     }
   }, [token])

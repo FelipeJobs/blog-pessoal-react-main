@@ -8,6 +8,7 @@ import UserLogin from "../../Models/UserLogin";
 import { login } from "../../Services/Service";
 import { useDispatch } from "react-redux";
 import { addToken } from "../../store/tokens/action";
+import { toast } from "react-toastify";
 
 /* Basicamente O use states defini como uma variável será inicializada quando for renderizada(tipo um construtor) */
 
@@ -55,10 +56,29 @@ function Login() {
 
     try {
       await login(`/usuarios/logar`, userLogin, setToken)
-      alert("Parabéns você está Dentro do Vida de Dev !!!!")
+      
+        toast.success('"Parabéns você está Dentro do Vida de Dev !!!!"', {
+        position: "top-left",
+        autoClose: 300,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: 'dark'
+        });
 
   } catch (error) {
-      alert("Confira se os dados estão corretos e se você já está cadastrado")
+      toast.error('"Confira se os dados estão corretos e se você já está cadastrado"', {
+        position: "top-left",
+        autoClose: 300,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: 'colored'
+        });
   }
 }
   

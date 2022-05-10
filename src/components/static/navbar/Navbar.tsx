@@ -1,15 +1,11 @@
 import React from "react";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Box,
-} from "@material-ui/core";
+import {AppBar,Toolbar,Typography,Box,} from "@material-ui/core";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokensReducer";
 import { addToken } from "../../../store/tokens/action";
+import {toast} from 'react-toastify'
 
 function Navbar() {
   const token = useSelector<TokenState, TokenState["tokens"]>(
@@ -23,7 +19,17 @@ function Navbar() {
   /* essa função é para apagar o token que fica armazenado no LocalStorage(navegador) */
   function logout() {
     dispatch(addToken(''));
-    alert('Usuário deslogado com sucesso !!!')
+    toast.info('Deslogado com sucesso!!', {
+      position: "top-right",
+      autoClose: 500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: 'dark'
+     
+      });
     history('/login')
   }
 

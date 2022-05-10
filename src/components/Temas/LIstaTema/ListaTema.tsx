@@ -7,6 +7,7 @@ import useLocalStorage from 'react-use-localstorage';
 import { busca } from '../../../Services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 function ListaTema() {
     let  history = useNavigate()
@@ -19,7 +20,16 @@ function ListaTema() {
     useEffect(() => {
       if(token === ''){
 
-        alert('Você precisa estar logado')
+          toast.error('você precisa se logar primeiro!!', {
+          position: "top-right",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: false,
+          progress: undefined,
+          theme: 'dark'
+          });
         history("/login") 
       }
 

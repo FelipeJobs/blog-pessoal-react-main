@@ -9,6 +9,7 @@ import Postagem from '../../../Models/Postagem'
 import './CadastrarPostagem.css'
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import { toast } from 'react-toastify';
 
 function CadastroPostagem() {
 
@@ -37,7 +38,16 @@ function CadastroPostagem() {
 
     useEffect(() => {
         if (token === "") {
-            alert("Você precisa estar logado")
+                toast.error('você precisa se logar primeiro!!', {
+                position: "top-right",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                progress: undefined,
+                theme: 'dark'
+                });
             history("/login")
         }
     }, [token])
@@ -93,9 +103,29 @@ function CadastroPostagem() {
                         'Authorization': token
                     }
                 })
-                alert('Postagem atualizada com sucesso');
+                
+                   toast.info('Postagem atualizada com sucesso!!!', {
+                    position: "top-right",
+                    autoClose: 500,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    progress: undefined,
+                    theme: 'colored'
+                    });
+
             } catch (error) {
-                alert("Erro ao atualizar, verifique os campos")
+                    toast.error('Erro ao atualizar, verifique os campos', {
+                    position: "top-right",
+                    autoClose: 500,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    progress: undefined,
+                    theme: 'colored'
+                    });
             }
 
         } else {
@@ -105,9 +135,30 @@ function CadastroPostagem() {
                         'Authorization': token
                     }
                 })
-                alert('Postagem cadastrada com sucesso');
+                    toast.success('Postagem cadastrada com sucesso!!!', {
+                    position: "top-right",
+                    autoClose: 500,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    progress: undefined,
+                    theme: 'colored'
+                    });
+                
             } catch (error) {
-                alert("Erro ao cadastrar, verifique os campos")
+                
+                    toast.error('Erro ao cadastrar, verifique os campos', {
+                    position: "top-right",
+                    autoClose: 500,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    progress: undefined,
+                    theme: 'colored'
+                    });
+                
             }
         }
         back()
