@@ -55,7 +55,7 @@ function DeletarPostagem() {
     }
 
     async function sim() {
-        history('/posts')
+        history('/postagens')
 
         try {
             await deleteId(`/postagens/${id}`, {
@@ -63,7 +63,6 @@ function DeletarPostagem() {
                     'Authorization': token
                 }
             });
-            alert('');
             toast.success('Postagem deletada com sucesso!!!', {
                 position: "top-right",
                 autoClose: 500,
@@ -91,7 +90,7 @@ function DeletarPostagem() {
     }
 
     function nao() {
-        history('/posts')
+        history('/postagens')
     }
 
     return (

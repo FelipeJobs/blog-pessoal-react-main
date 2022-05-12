@@ -55,7 +55,7 @@ function CadastroTema() {
 
     /* essa função faz a conexão com a API */
     async function findById(id: string) {
-        await buscaId(`/temas/${id}`, setTema, {
+        await buscaId(`/tema/${id}`, setTema, {
             headers: {
                 'Authorization': token
             }

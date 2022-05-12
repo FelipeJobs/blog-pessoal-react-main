@@ -2,6 +2,7 @@ import {Action } from './action';
 
 export interface TokenState {
     tokens: string
+
 }
 
 const initialState = {
