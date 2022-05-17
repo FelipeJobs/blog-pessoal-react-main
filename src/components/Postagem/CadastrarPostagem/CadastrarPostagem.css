@@ -3,6 +3,12 @@
 }
 
 .tituloformulariopost{
-    color: black;
-    text-shadow: 4px 2px 1px rgb(128, 128, 223);
+    color: white;
+    text-shadow: 4px 2px 1px red
 }
+
+#demo-simple-select-helper-label{
+    color: white;
+    text-shadow: 4px 2px 1px rgb(241, 114, 114)
+}
+

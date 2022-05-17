@@ -178,6 +178,7 @@ function CadastroPostagem() {
                     onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
                     id="titulo" label="titulo" variant="outlined"
                     name="titulo" margin="normal" fullWidth
+                    style={{backgroundColor: 'lightblue'}}
                 />
 
                 <TextField
@@ -185,10 +186,12 @@ function CadastroPostagem() {
                     onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
                     id="texto" label="texto" name="texto" variant="outlined"
                     margin="normal" fullWidth
+                    style={{backgroundColor: 'lightblue'}}
                 />
 
                 <FormControl>
-                    <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
+                    <InputLabel id="demo-simple-select-helper-label">Tema 
+                    </InputLabel>
 
                     <Select
                         labelId="demo-simple-select-helper-label"
